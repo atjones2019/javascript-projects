@@ -13,3 +13,14 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let anonFunc = function (arrValue){
+    if (typeof arrValue === "number"){
+        return arrValue * 3;
+    } else if (typeof arrValue === "string"){
+        return "ARRR!";
+    } else {
+        return arrValue;
+    }
+};
+console.log(arr.map(anonFunc));
