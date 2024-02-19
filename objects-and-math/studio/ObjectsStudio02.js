@@ -1,14 +1,3 @@
-// Code your orbitCircumference function here:
-
-
-// Code your missionDuration function here:
-
-
-// Copy/paste your selectRandomEntry function here:
-
-
-// Code your oxygenExpended function here:
-
 
 // Candidate data & crew array.
 let candidateA = {
@@ -56,3 +45,46 @@ let candidateA = {
  
  let crew = [candidateA,candidateC,candidateE];
  
+ // Code your orbitCircumference function here:
+
+function orbitCircumference(radius){
+  r = radius;
+  circumference = 2 * Math.PI * radius;
+  return Math.round(circumference);
+}
+
+// Code your missionDuration function here:
+
+function missionDuration(orbits, orbitRadius, orbitalSpeed){
+  let time = (orbits * orbitCircumference(orbitRadius))/orbitalSpeed;
+  return Math.round(time * 100)/100
+}
+
+let radius = 2000;
+let speed = 28000;
+
+console.log(`The mission will travel ${orbitCircumference(radius)*3} km around the planet, and it will take ${missionDuration(3,radius, speed)} hours to complete.`)
+
+// Copy/paste your selectRandomEntry function here:
+
+function selectRandomEntry(randomID){
+  let threeIDs = [];
+  while(threeIDs.length < 3){
+    let randomIndex = Math.floor(Math.random()*randomID.length);
+    if (!threeIDs.includes(randomID[randomIndex])){
+      threeIDs.push(randomID[randomIndex])
+    }
+  }  
+  return threeIDs;
+}
+
+// Code your oxygenExpended function here:
+
+let idNumbers = [291, 414, 503, 599, 796, 890];
+let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
+let threeRandom = selectRandomEntry(idNumbers);
+
+function oxygenExpended(){
+
+}
+
